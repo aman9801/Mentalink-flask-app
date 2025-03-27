@@ -35,6 +35,9 @@ def handle_av_stream(data):
 def handle_disconnect():
     print("Client disconnected")
 
+import os
+
+port = int(os.getenv("PORT", 4000))
 
 if __name__ == "__main__":
-    socketio.run(app, port=5000)
+    socketio.run(app, port=port)
